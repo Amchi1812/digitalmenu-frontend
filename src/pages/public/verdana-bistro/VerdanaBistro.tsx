@@ -62,6 +62,8 @@ export const VerdanaBistro: React.FC = () => {
                     content={menuData ? `Pogledajte ponudu jela i pića za ${menuData.name}.` : 'Učitavanje menija...'}
                 />
                 <meta name="google-site-verification" content="I4ylTqZDGDFQ20m0hvOWOPNcyYErenMVJMgO7o775kI" />
+                
+                
 
                 {/* Favicon sa parametrom za sprečavanje keširanja */}
                 <link
