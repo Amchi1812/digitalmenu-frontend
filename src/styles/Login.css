@@ -13,39 +13,7 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.overlay-login {
-  background-color: #033d30;
-  width: 45dvw;
-  height: 100dvh;
-  position: fixed;
-  right: 0;
-  border-radius: 5% 0px 0px 30%;
-  z-index: 1;
 
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 3.9rem;
-
-
-}
-
-.dm {
-  color: #c5c0bc;
-  font-size: 7rem;
-  font-weight: 900;
-  letter-spacing: 0.5rem;
-  margin: 0;
-
-
-  writing-mode: vertical-rl;
-
-  display: inline-block;
-  transform: scaleX(2.3);
-
-  transform-origin: center;
-  z-index: 2;
-}
 
 .login-card {
   background-color: #3f3e3e90;
@@ -201,8 +169,3 @@
   }
 }
 
-@media (max-width: 1024px) {
-  
-
-
-}

@@ -53,7 +53,7 @@ export const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <div className='overlay-login'><p className='dm'>DigitalMenu</p></div>
+      
       <div className="login-card">
         <div className="login-header">
           <div className="login-icon-circle">
