@@ -34,7 +34,7 @@ export const VerdanaBistro: React.FC = () => {
     }, []);
 
     if (isLoading) {
-        return (<VerdanaBistroSkeleton/>);
+        return (<VerdanaBistroSkeleton />);
     }
 
     if (error || !menuData) {
@@ -53,49 +53,55 @@ export const VerdanaBistro: React.FC = () => {
 
     return (
         <div className="verdana-container">
-            
-            <Helmet>
-                <title>{menuData ? `${menuData.name} | Digital Menu` : 'Učitavanje menija...'}</title>
-                <meta name="description" content={menuData ? `Pogledajte ponudu za ${menuData.name}` : 'Učitavanje...'} />
 
+            <Helmet>
+                {/* Naslov i Opis */}
+                <title>{menuData ? `${menuData.name} | Digital Menu` : 'Učitavanje menija...'}</title>
+                <meta
+                    name="description"
+                    content={menuData ? `Pogledajte ponudu jela i pića za ${menuData.name}.` : 'Učitavanje menija...'}
+                />
+
+                {/* Favicon sa parametrom za sprečavanje keširanja */}
                 <link
-                    key="favicon"
                     rel="icon"
                     type="image/svg+xml"
-                    href="https://api.iconify.design/lucide:utensils.svg?color=%230d261e"
+                    href="https://api.iconify.design/lucide:utensils.svg?color=%230d261e&v=2"
                 />
                 <link
-                    key="shortcut-favicon"
-                    rel="shortcut icon"
-                    type="image/svg+xml"
-                    href="https://api.iconify.design/lucide:utensils.svg?color=%230d261e"
+                    rel="alternate icon"
+                    type="image/png"
+                    href="https://api.iconify.design/lucide:utensils.png?color=%230d261e&v=2"
                 />
 
-
-                
-                <meta property="og:title" content={menuData ? `${menuData.name} - Digital Menu` : 'Digital Menu'} />
-                <meta property="og:description" content="Where Every Meal Matters. Explore our dishes online." />
+                {/* Open Graph (Facebook, WhatsApp, Viber dijeljenje) */}
+                <meta property="og:title" content={menuData ? `${menuData.name} | Digital Menu` : 'Digital Menu'} />
+                <meta
+                    property="og:description"
+                    content={menuData ? `Pogledajte kompletan digitalni meni za ${menuData.name}.` : 'Where Every Meal Matters.'}
+                />
                 <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200" />
                 <meta property="og:type" content="restaurant" />
 
-                
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Restaurant",
-                        "name": menuData.name,
-                        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "streetAddress": "Rue de la Paix 12",
-                            "addressLocality": "Paris",
-                            "addressCountry": "FR"
-                        },
-                        "servesCuisine": "French, Fine Dining",
-                        "priceRange": "$$"
-                    })}
-                </script>
-
+                {/* Google Schema.org (JSON-LD) - Renderuje se samo kada menuData postoji da ne baci crash */}
+                {menuData && (
+                    <script type="application/ld+json">
+                        {JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Restaurant",
+                            "name": menuData.name,
+                            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Rue de la Paix 12",
+                                "addressLocality": "Paris",
+                                "addressCountry": "FR"
+                            },
+                            "servesCuisine": "International",
+                            "priceRange": "$$"
+                        })}
+                    </script>
+                )}
             </Helmet>
 
 
@@ -143,7 +149,7 @@ export const VerdanaBistro: React.FC = () => {
                         <h2 className="verdana-section-title">Our Full Menu</h2>
                     </div>
 
-                                  
+
                     <div className="verdana-categories-tabs">
                         <button
                             className={`verdana-tab-btn ${activeCategoryId === 'all' ? 'active' : ''}`}
@@ -162,7 +168,7 @@ export const VerdanaBistro: React.FC = () => {
                         ))}
                     </div>
 
-                     
+
                     {displayedCategories.map((category) => (
                         <div key={category.id} style={{ marginBottom: '3.5rem' }}>
                             <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', color: '#0d261e', marginBottom: '1.5rem', borderBottom: '2px solid #eae4d9', paddingBottom: '0.5rem' }}>
