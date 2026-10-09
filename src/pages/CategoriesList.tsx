@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import type { CategoryDto, ReorderCategoryDto } from "../types"
 import api from "../api/axios";
 import { Link } from "react-router-dom";
-import { AlertCircle, GripVertical, Loader2, Plus, Store } from "lucide-react";
+import { AlertCircle, GripVertical, Plus, Store } from "lucide-react";
 import '../styles/CategoriesList.css';
 import { DragDropContext, Draggable, Droppable, type DropResult } from "@hello-pangea/dnd";
 import { CategoryTableSkeleton } from "./CategoryTableSkeleton";
@@ -14,7 +14,7 @@ export const CategoriesList: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [deleteError, setDeleteError] = useState<string | null>(null);
-    const [isReordering, setIsReordering] = useState<boolean>(false);
+    
 
     const getCategories = async () => {
         try {
@@ -88,7 +88,7 @@ export const CategoriesList: React.FC = () => {
 
         
         try {
-            setIsReordering(true);
+            
             const payload: ReorderCategoryDto[] = reorderedCategories.map((c) => ({
                 id: c.id,
                 displayOrder: c.displayOrder,
@@ -99,9 +99,7 @@ export const CategoriesList: React.FC = () => {
             console.error('Greška pri spašavanju novog redoslijeda:', err);
             
             getCategories();
-        } finally {
-            setIsReordering(false);
-        }
+        } 
     };
 
 
