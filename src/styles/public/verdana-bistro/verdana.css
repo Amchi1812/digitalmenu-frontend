@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --vb-bg-dark: #0d261e;
+  --vb-bg-card: #13352a;
+  --vb-bg-light: #f7f4ee;
+  --vb-gold: #d4af37;
+  --vb-gold-hover: #b89628;
+  --vb-text-dark: #1a2e26;
+  --vb-text-muted: #667e75;
+  --vb-text-light: #e8f0ec;
+  --vb-font-serif: 'Cormorant Garamond', serif;
+  --vb-font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.verdana-container {
+  font-family: var(--vb-font-sans);
+  background-color: var(--vb-bg-light);
+  color: var(--vb-text-dark);
+  min-height: 100dvh;
+}
+
+/* Header / Navigation Bar */
+.verdana-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(to bottom, rgba(13, 38, 30, 0.937), transparent);
+}
+
+.verdana-header.scroled{
+  background-color: var(--vb-bg-dark);
+}
+
+.verdana-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  
+}
+.open-nav{
+  display: none;
+  background: #13352a7e;
+  border: none;
+  color: var(--vb-bg-light);
+  padding: 0.5rem 1.5rem;
+  border-radius: 24px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  
+}
+
+.open-nav:hover{
+  color: var(--vb-gold-hover);
+}
+.verdana-nav-side{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.verdana-nav-side a{
+  color: var(--vb-text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+  color: #ffffffdf;
+  text-align: center;
+  
+}
+
+.verdana-nav-side a:hover{
+  color: var(--vb-gold);
+}
+.mobile-bar{
+  width: 70vw;
+  background-color: var(--vb-bg-dark);
+  height: 100dvh;
+  position: fixed;
+  right: 0;
+  border-radius: 20px 0px 0px 20px;
+  top: 0px;
+  display: none;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 1rem;
+  align-items: center;
+  z-index: 1000;
+}
+.name{
+  position: absolute;
+  bottom: 2rem;
+  color: var(--vb-gold);
+  font-family: var(--vb-font-serif);
+  font-size: 1.7rem;
+}
+
+.name:hover{
+  color: var(--vb-gold-hover);
+}
+
+.x{
+  position: fixed;
+  right: 1rem;
+  background-color: transparent;
+  color: var(--vb-text-light);
+  border: none;
+}
+
+.x:hover{
+  color: var(--vb-gold-hover);
+  transform: translateY(-2px);
+  
+}
+
+.verdana-logo {
+  font-family: var(--vb-font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--vb-gold);
+  letter-spacing: 0.5px;
+}
+
+.verdana-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.verdana-nav a {
+  color: var(--vb-text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+  color: #ffffffdf;
+  
+}
+
+.verdana-nav a:hover {
+  color: var(--vb-gold);
+  
+}
+
+
+.verdana-admin-btn {
+  display: flex ;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background-color: rgba(13, 38, 30, 0.6);
+  color: var(--vb-gold) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease !important;
+  text-decoration: none;
+}
+.verdana-admin-btn-side {
+  display: flex ;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background-color: rgba(13, 38, 30, 0.6);
+  color: var(--vb-gold) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease !important;
+  text-decoration: none;
+}
+
+.verdana-admin-btn:hover {
+  background-color: var(--vb-gold) !important;
+  color: #0d261e !important;
+  border-color: var(--vb-gold) !important;
+  transform: translateY(-2px);
+}
+
+.verdana-admin-btn-side:hover {
+  background-color: var(--vb-gold) !important;
+  color: #0d261e !important;
+  border-color: var(--vb-gold) !important;
+  transform: translateY(-2px);
+}
+
+
+/* Hero Sekcija */
+.verdana-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(13, 38, 30, 0.75), rgba(13, 38, 30, 0.85)),
+              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.verdana-hero-content {
+  max-width: 800px;
+  color: var(--vb-text-light);
+}
+
+.verdana-hero-title {
+  font-family: var(--vb-font-serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.verdana-hero-title span {
+  font-style: italic;
+  color: var(--vb-gold);
+}
+
+.verdana-hero-subtitle {
+  font-size: 1.1rem;
+  color: #c2d6cd;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.verdana-btn-gold {
+  display: inline-block;
+  background-color: var(--vb-gold);
+  color: #0d261e;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.verdana-btn-gold:hover {
+  background-color: var(--vb-gold-hover);
+  transform: translateY(-2px);
+}
+
+/* O nama / About sekcija */
+.verdana-about {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.verdana-about-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.verdana-section-tag {
+  color: var(--vb-gold);
+  font-family: var(--vb-font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.verdana-section-title {
+  font-family: var(--vb-font-serif);
+  font-size: 2.5rem;
+  color: var(--vb-text-dark);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.verdana-about-text {
+  color: var(--vb-text-muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Sekcija Meni-ja */
+.verdana-menu-section {
+  background-color: #ffffff;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid #eae5dc;
+}
+
+.verdana-menu-container {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+.verdana-categories-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.verdana-tab-btn {
+  background: transparent;
+  border: 1px solid #dcd5c9;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  font-family: var(--vb-font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--vb-text-dark);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.verdana-tab-btn.active,
+.verdana-tab-btn:hover {
+  background-color: var(--vb-bg-dark);
+  color: var(--vb-gold);
+  border-color: var(--vb-bg-dark);
+}
+
+/* Grid kartica artikala */
+.verdana-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.verdana-item-card {
+  background-color: var(--vb-bg-light);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #eae4d9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.verdana-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 45, 36, 0.08);
+}
+
+.verdana-item-img-wrap {
+  width: 100%;
+  height: 200px;
+  background-color: #e2dcd0;
+  position: relative;
+}
+
+.verdana-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.verdana-item-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.verdana-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  gap: 1rem;
+}
+
+.verdana-item-title {
+  font-family: var(--vb-font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--vb-text-dark);
+}
+
+.verdana-item-price {
+  font-weight: 700;
+  color: var(--vb-bg-dark);
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.verdana-item-desc {
+  color: var(--vb-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+/* --- VISIT / KONTAKT SEKCIJA --- */
+.verdana-visit-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--vb-bg-light);
+  border-top: 1px solid #eae5dc;
+}
+
+.verdana-visit-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.verdana-visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.verdana-info-card {
+  background: var(--vb-bg-dark);
+  color: var(--vb-text-light);
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(13, 38, 30, 0.15);
+}
+
+.verdana-info-title {
+  font-family: var(--vb-font-serif);
+  font-size: 1.8rem;
+  color: var(--vb-gold);
+  margin-bottom: 2rem;
+}
+
+.verdana-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.verdana-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #c2d6cd;
+}
+
+.verdana-info-item strong {
+  color: #ffffff;
+}
+
+.verdana-info-icon {
+  color: var(--vb-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.verdana-map-wrap {
+  width: 100%;
+  min-height: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* --- FOOTER SEKCIJA --- */
+.verdana-footer {
+  background: linear-gradient(rgb(13, 38, 30), rgba(13, 38, 30, 0.891)),
+              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920') center/cover no-repeat;
+  color: #88a096;
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  border-top: 1px solid #13352a;
+}
+
+.verdana-footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.verdana-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #13352a;
+}
+
+.verdana-footer-logo {
+  font-family: var(--vb-font-serif);
+  font-size: 1.8rem;
+  color: var(--vb-gold);
+  margin-bottom: 0.3rem;
+}
+
+.verdana-footer-tagline {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #667e75;
+}
+
+.verdana-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.verdana-footer-links a {
+  color: var(--vb-text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.verdana-footer-links a:hover {
+  color: var(--vb-gold);
+}
+
+.verdana-footer-admin-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--vb-gold) !important;
+  font-weight: 600;
+}
+
+.verdana-footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.verdana-footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #13352a;
+  color: var(--vb-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.verdana-footer-socials a:hover {
+  background-color: var(--vb-gold);
+  color: #081914;
+  transform: translateY(-2px);
+}
+
+.verdana-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  font-size: 0.825rem;
+  color: #556c63;
+}
+
+/* Responsiveness za ekrane telefona */
+@media (max-width: 768px) {
+  .verdana-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .verdana-footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+  .verdana-footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .verdana-footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .verdana-hero-title { font-size: 2.4rem; }
+  .verdana-about { grid-template-columns: 1fr; gap: 2rem; }
+  .verdana-about-img { height: 280px; }
+  .verdana-items-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1024px){
+  .mobile-bar.active{
+    display: flex;
+  }
+  .verdana-nav{
+    display: none;
+  }
+  .verdana-admin-btn{
+    display: none;
+  }
+
+  .open-nav{
+    display: flex;
+  }
+
+  .overlay{
+    background-color: rgba(0, 0, 0, 0.509);
+    z-index: 999;
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+
+  }
+
+}

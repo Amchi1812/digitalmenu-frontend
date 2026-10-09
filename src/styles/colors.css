@@ -1,0 +1,16 @@
+:root {
+  --color-background-l: #ffffff; 
+  --color-background: #160f10;
+  --color-surface: #241819;
+
+  --color-primary: #542327;
+  --color-primary-hover: #702a32;
+  --color-primary-active: #3a2020;
+
+  --color-text: #ffffff;
+  --color-heading: #c7b39a;
+  --color-text-muted: #aa9986;
+
+  --color-border: #493031;
+}
+
